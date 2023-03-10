@@ -13,9 +13,9 @@ body{
     align-items: center;
     
     background-color: black;
-    
+    position: relative;
 }
-body::before{
+/* body::before{
     content: "";
     position: absolute;
     bottom: -160px;
@@ -26,8 +26,8 @@ body::before{
     background: rgb(255,132,0);
     background: radial-gradient(circle, rgba(255,132,0,1) 0%, rgba(241,8,8,1) 72%);
     box-shadow: 0 0 105px 45px rgba(255,132,0,1);
-}
-body::after{
+} */
+/* body::after{
     content: "";
     position: absolute;
     top: -160px;
@@ -38,6 +38,59 @@ body::after{
     background: rgba(63,139,251,1);
     background: radial-gradient(circle,rgba(63,139,251,1), rgba(70,226,252,1));
     box-shadow: 0 0 105px 45px rgba(63,139,251,1);
+} */
+.circle-top{
+    position: absolute;
+    top: -160px;
+    left: -160px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(63,139,251,1);
+    background: radial-gradient(circle,rgba(63,139,251,1), rgba(70,226,252,1));
+    
+}
+
+.circle-top .cirle-pulse{
+    position: absolute;
+    background:inherit;
+    border-radius: inherit;
+    width: 320px;
+    height: 320px;
+    opacity: 0.8;
+    animation: pulse 4s ease-out infinite;
+    animation-delay: calc(1s * var(--i));
+    box-shadow: 0 0 105px 45px rgba(63,139,251,1);
+}
+.circle-bottom{
+    position: absolute;
+    bottom: -160px;
+    right: -160px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgb(255,132,0);
+    background: radial-gradient(circle, rgba(255,132,0,1) 0%, rgba(241,8,8,1) 72%);
+    
+    
+}
+
+.circle-bottom .cirle-pulse{
+    position: absolute;
+    background:inherit;
+    border-radius: inherit;
+    width: 320px;
+    height: 320px;
+    opacity: 0.8;
+    animation: pulse 4s ease-out infinite;
+    animation-delay: calc(1s * var(--i));
+    box-shadow: 0 0 105px 45px rgba(255,132,0,1);
+}
+@keyframes pulse {
+    100% {
+        transform: scale(2);
+        opacity: 0;  
+    }
 }
 .container{
     position: relative;
