@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Atropos Parallax CSS -->
+    <link rel="stylesheet" href="css/atropos.css" />
 
     <!-- App css -->
     <link rel="stylesheet" href="css/style.css" />
@@ -15,192 +22,129 @@
     <title>Birthday Wishes</title>
   </head>
   <body>
-        <div class="circle-top">
-            <div class="cirle-pulse" style="--i:0"></div>
-            <div class="cirle-pulse" style="--i:1"></div>
-            <div class="cirle-pulse" style="--i:2"></div>
-            <div class="cirle-pulse" style="--i:3"></div>
-        </div>
-        <div class="circle-bottom">
-            <div class="cirle-pulse" style="--i:0"></div>
-            <div class="cirle-pulse" style="--i:1"></div>
-            <div class="cirle-pulse" style="--i:2"></div>
-            <div class="cirle-pulse" style="--i:3"></div>
-        </div>
-        <div class="container">
-            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="calendar-card">
-                <div class="card-content">
-                    <div class="row">
-                        <div class="month-year">March - 2023</div>
-                    </div>
-                    <div class="row">
-                        <div class="col day">
-                            Mon
-                        </div>
-                        <div class="col day">
-                            Tue
-                        </div>
-                        <div class="col day">
-                            Wed
-                        </div>
-                        <div class="col day">
-                            Thu
-                        </div>
-                        <div class="col day">
-                            Fri
-                        </div>
-                        <div class="col day">
-                            Sat
-                        </div>
-                        <div class="col day">
-                            Sun
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date now">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col date">
-                            01
-                        </div>
-                        <div class="col date">
-                            02
-                        </div>
-                        <div class="col date">
-                            03
-                        </div>
-                        <div class="col date">
-                            04
-                        </div>
-                        <div class="col date">
-                            05
-                        </div>
-                        <div class="col date">
-                            06
-                        </div>
-                        <div class="col date">
-                            07
-                        </div>
-                    </div>
+    <div class="circle-top">
+      <div class="cirle-pulse" style="--i: 0"></div>
+      <div class="cirle-pulse" style="--i: 1"></div>
+      <div class="cirle-pulse" style="--i: 2"></div>
+      <div class="cirle-pulse" style="--i: 3"></div>
+    </div>
+    <div class="circle-bottom">
+      <div class="cirle-pulse" style="--i: 0"></div>
+      <div class="cirle-pulse" style="--i: 1"></div>
+      <div class="cirle-pulse" style="--i: 2"></div>
+      <div class="cirle-pulse" style="--i: 3"></div>
+    </div>
+    
+      <div class="atropos my-atropos container">
+        <!-- scale container (required) -->
+        <div class="atropos-scale">
+          <!-- rotate container (required) -->
+          <div class="atropos-rotate">
+            <!-- inner container (required) -->
+            <div class="atropos-inner  calendar-card">
+              <!-- put your custom content here -->
+              
+                <div class="birthday-countdown" >
+                  <div class="countdown-timer">
+                    <h1 data-atropos-offset="15">
+                      Day
+                      <div id="day"></div>
+                    </h1>
+                    <h1 data-atropos-offset="15">
+                      Hour
+                      <div id="hour"></div>
+                    </h1>
+                    <h1 data-atropos-offset="15">
+                      Minute
+                      <div id="min"></div>
+                    </h1>
+                    <h1 data-atropos-offset="15">
+                      Second
+                      <div id="sec"></div>
+                    </h1>
+                  </div>
                 </div>
+                <div class="card-content" >
+                  <div class="row">
+                    <div class="month-year"  data-atropos-offset="15">March - 2023</div>
+                  </div>
+                  <div class="row" >
+                    <div class="col day" data-atropos-offset="15">Mon</div>
+                    <div class="col day" data-atropos-offset="15">Tue</div>
+                    <div class="col day" data-atropos-offset="15">Wed</div>
+                    <div class="col day" data-atropos-offset="15">Thu</div>
+                    <div class="col day" data-atropos-offset="15">Fri</div>
+                    <div class="col day" data-atropos-offset="15">Sat</div>
+                    <div class="col day" data-atropos-offset="15">Sun</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date active">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                  <div class="row">
+                    <div class="col date">01</div>
+                    <div class="col date">02</div>
+                    <div class="col date">03</div>
+                    <div class="col date">04</div>
+                    <div class="col date">05</div>
+                    <div class="col date">06</div>
+                    <div class="col date">07</div>
+                  </div>
+                </div>
+              
             </div>
+          </div>
         </div>
+      </div>
+    
     
 
     <!-- Card hover effect js library -->
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+
+    <!-- Astropos JS -->
+    <script type="text/javascript" src="js/atropos.js"></script>
 
     <!-- App JS file -->
     <script type="text/javascript" src="js/main.js"></script>
