@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: black;
+    
+}
+body::before{
+    content: "";
+    position: absolute;
+    bottom: -160px;
+    right: -160px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgb(255,132,0);
+    background: radial-gradient(circle, rgba(255,132,0,1) 0%, rgba(241,8,8,1) 72%);
+    box-shadow: 0 0 105px 45px rgba(255,132,0,1);
+}
+body::after{
+    content: "";
+    position: absolute;
+    top: -160px;
+    left: -160px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(63,139,251,1);
+    background: radial-gradient(circle,rgba(63,139,251,1), rgba(70,226,252,1));
+    box-shadow: 0 0 105px 45px rgba(63,139,251,1);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+.calendar-card{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    background:rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+.card-content{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.card-content .row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.card-content .row .month-year{
+    text-transform: uppercase;
+    color: aliceblue;
+    font-size: 18px;
+    text-align: center;
+    margin: 3px;
+    font-weight: bold;
+}
+.card-content .row .col{
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    text-align: center;
+    margin: 3px;
+}
+.card-content .row .date{
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 16px;
+    padding: 6px;
+    text-align: center;
+}
+.card-content .row .now{
+    background-color: rgb(46, 204, 135);
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0px 0px 50px 20px rgba(45,255,196,0.9);
+}
