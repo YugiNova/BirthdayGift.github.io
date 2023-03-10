@@ -102,7 +102,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
     max-width: 1200px;
     flex-wrap: wrap;
 }
@@ -175,7 +175,7 @@ body{
 .birthday-countdown{
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
+    background-color: rgba(51,24,51,0.349);
     /* background-color: rgba(51, 24, 51, 0.349); */
     margin: 0 auto;
     display: flex;
@@ -183,6 +183,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 .birthday-countdown .countdown-timer{
     display: flex;
@@ -190,6 +191,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    z-index: 5;
 }
 .birthday-countdown .countdown-timer h1{
     display: flex;
@@ -197,7 +199,7 @@ body{
     align-items: center;
     flex-direction: column;
     font-size: 22px;
-    padding: 10px;
+    padding: 15px 5px;
     color: #fff;
     background: linear-gradient(to right,#30CFD0 0%, #330867 100%);
     -webkit-background-clip: text;
@@ -207,11 +209,39 @@ body{
 .birthday-countdown .animal-of-age{
     height: 300px;
     width: 300px;
-    
+    position: absolute;
+    z-index: 1;
 }
 .birthday-countdown img{
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     transform: translateZ(20px);
     box-shadow: 0 0 50px 0 rgb(51 51 51 / 30%);
 }
+.eye {
+    position: absolute;
+    display: inline-block;
+
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    background: white;
+    z-index: 2;
+  }
+.left{
+    left: 107px;
+    top:148px;
+}
+.right{
+    right: 110px;
+    top:148px;
+}
+  .eye::before { 
+    position: absolute;
+    transform: translate(-1%, -1%);
+    width: 13px;
+    height: 13px;
+    background: black;
+    border-radius: 50%;
+    content: " ";
+  }
