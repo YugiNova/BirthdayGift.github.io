@@ -130,47 +130,7 @@ body{
     flex-wrap: wrap;
     padding: 15px;
 }
-.card-content .row{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.card-content .row .month-year{
-    text-transform: uppercase;
-    color: aliceblue;
-    font-size: 18px;
-    text-align: center;
-    margin: 3px;
-    font-weight: bold;
-}
-.card-content .row .col{
-    color: white;
-    font-size: 18px;
-    width: 40px;
-    text-align: center;
-    margin: 3px;
-}
-.card-content .row .date{
-    color: rgba(255, 255, 255, 0.637);
-    font-size: 16px;
-    padding: 6px;
-    text-align: center;
-}
-.card-content .row .date:hover{
-    border-radius: 50%;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 6px;
-    cursor: pointer;
-}
-.card-content .row .active{
-    background-color: rgb(46, 204, 135);
-    border-radius: 50%;
-    color: white;
-    box-shadow: 0px 0px 50px 20px rgba(45,255,196,0.9);
-}
+
 
 .birthday-countdown{
     width: 100%;
@@ -201,7 +161,10 @@ body{
     font-size: 22px;
     padding: 15px 5px;
     color: #fff;
-    background: linear-gradient(to right,#30CFD0 0%, #330867 100%);
+    background: #833ab4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -245,21 +208,4 @@ body{
     border-radius: 50%;
     content: " ";
   }
-  .date{
-    animation: lightingText 5s linear infinite;
-  }
-  @keyframes lightingText {
-    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
-        color: transparent;
-        text-shadow: none;
-    }
-    18.1%,20.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
-        color: #fff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 40px #03bcf4,
-        0 0 60px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 100px #03bcf4
-    }
-  }
+  
