@@ -16,6 +16,7 @@ getFebDays = (year) => {
 
 let calendar = document.querySelector('.calendar');
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthFullNames = ['Jannuary', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August','Septemper', 'October', 'November', 'December'];
 let monthPicker = document.querySelector('#month-picker');
 
 monthPicker.onclick = () => {
@@ -32,7 +33,7 @@ generateCalendar = (month, year) => {
     let currDate = new Date();
     let birthday = new Date("2022-03-28");
 
-    monthPicker.innerHTML = monthNames[month];
+    monthPicker.innerHTML = monthFullNames[month];
     calendarHeaderYear.innerHTML = year;
 
     let firstDay = new Date(year, month, 1);
@@ -50,7 +51,8 @@ generateCalendar = (month, year) => {
                 day.classList.add('currDate')
             }
             if (i - firstDay.getDay() + 1 === birthday.getDate() && month === currDate.getMonth()) {
-                day.classList.add('birthDay')
+                day.classList.add('birthDay');
+                day.setAttribute("data-atropos-offset","45")
             }
         }
         calendarDay.appendChild(day)

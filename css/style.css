@@ -164,11 +164,35 @@ body{
     background: #833ab4;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: 0.5s ease;
+    animation: countdown-rotation 1s forwards;
+}
+.birthday-countdown .countdown-timer #sec{
+    
 }
 
+@keyframes countdown-rotation {
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes to-top {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 .birthday-countdown .animal-of-age{
     height: 300px;
     width: 300px;
