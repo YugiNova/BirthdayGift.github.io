@@ -70,17 +70,10 @@
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   font-weight: 600;
-  animation: countdown-rotation 0.5s forwards;
+  
 }
 
-@keyframes countdown-rotation {
-    0%{
-        transform: rotateX(0deg);
-    }
-    100%{
-        transform: rotateX(360deg);
-    }
-}
+
 .calendar-week-day div {
   display: grid;
   place-items: center;

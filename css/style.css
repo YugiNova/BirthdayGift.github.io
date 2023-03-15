@@ -47,10 +47,16 @@ body{
     left: -160px;
     width: 320px;
     height: 320px;
+    
     border-radius: 50%;
     background: rgba(63,139,251,1);
     background: radial-gradient(circle,rgba(63,139,251,1), rgba(70,226,252,1));
-    
+    /* transition: transform 5s ease; */
+}
+@keyframes circle-top-move {
+    100%{
+        transform: translateX(50vw) translateY(50vh);
+    }
 }
 
 .circle-top .cirle-pulse{
@@ -73,9 +79,15 @@ body{
     border-radius: 50%;
     background: rgb(255,132,0);
     background: radial-gradient(circle, rgba(255,132,0,1) 0%, rgba(241,8,8,1) 72%);
-    
+    /* transition: transform 5s ease; */
     
 }
+@keyframes circle-bottom-move {
+    100%{
+        transform: translateX(-50vw) translateY(-50vh);
+    }
+}
+
 
 .circle-bottom .cirle-pulse{
     position: absolute;
@@ -88,13 +100,44 @@ body{
     animation-delay: calc(1s * var(--i));
     box-shadow: 0 0 105px 45px rgba(255,132,0,1);
 }
+
+
+
+.circle-middle{
+    position: absolute;
+    top: 25vh;
+    left: 40vw;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgb(17,213,221);
+    background: radial-gradient(circle, rgba(17,213,221,1) 0%, rgba(21,205,119,1) 29%);
+    /* animation:circle-middle-move 3s forwards; */
+}
+
+.circle-middle .cirle-pulse{
+    position: absolute;
+    background:inherit;
+    border-radius: inherit;
+    width: 320px;
+    height:320px;
+    opacity: 0.8;
+    animation: pulse 4s ease-out infinite;
+    animation-delay: calc(1s * var(--i));
+    box-shadow: 0 0 105px 45px rgba(21,205,119,1);
+}
+@keyframes circle-middle-move {
+    100%{
+        transform: scale(320);
+    }
+}
+
 @keyframes pulse {
     100% {
         transform: scale(2);
         opacity: 0;  
     }
 }
-
 
 /* BIRTHDAY CARD */
 .container{
@@ -116,7 +159,8 @@ body{
     
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(23px);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
     /* overflow: hidden; */
@@ -152,6 +196,7 @@ body{
     align-items: center;
     overflow: hidden;
     z-index: 5;
+    display: none;
 }
 .birthday-countdown .countdown-timer h1{
     display: flex;
@@ -169,9 +214,6 @@ body{
     transition: 0.5s ease;
     animation: countdown-rotation 1s forwards;
 }
-.birthday-countdown .countdown-timer #sec{
-    
-}
 
 @keyframes countdown-rotation {
     0%{
@@ -182,17 +224,6 @@ body{
     }
 }
 
-@keyframes to-top {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
 .birthday-countdown .animal-of-age{
     height: 300px;
     width: 300px;
@@ -232,4 +263,99 @@ body{
     border-radius: 50%;
     content: " ";
   }
+  .discover-birthday{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .discover-birthday h1{
+    font-size: 25px;
+    position: relative;
+  }
+  .discover-birthday h1::before{
+    position: absolute;
+    content: attr(data-text);
+    color: white;
+    border-right: 4px solid #fff;
+    top: 0;
+    left: 0;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: text-effect 8s linear infinite;
+    filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff)
+  }
+  @keyframes text-effect {
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+  }
+  /* .discover-birthday button{
+    font-size: 20px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  } */
+
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes spin {
+    0% { --rotate: 0deg; }
+    100% { --rotate: 360deg; }
+  }
+  
+  .magic-card {
+    margin: 10px;
+    background: #191c29;
+    padding: 10px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .magic-card::before {
+    content: "";
+    width: 106%;
+    height: 120%;
+    top: -10%;
+    left: -3%;
+    border-radius: 8px;
+    position: absolute;
+    z-index: -1;
+    animation: spin 1.5s linear infinite;
+    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
+  }
+  .magic-card::after {
+    position: absolute;
+    content: "";
+    top: calc(450px / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity .5s;
+    transform: scale(0.8);
+    filter: blur(calc(450px / 6));
+    animation: spin 1.5s linear infinite;
+    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
+  }
+  
   

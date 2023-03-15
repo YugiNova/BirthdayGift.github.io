@@ -53,3 +53,17 @@ function count_down() {
         eye.style.transform = "rotate(" + rotate + "deg)";
       });
     }
+
+    //click to discover
+    const clickToDiscover = () => {
+      let circleTop = document.querySelector(".circle-top");
+      circleTop.style.animation = "circle-top-move 4s forwards";
+
+      let circleBottom = document.querySelector(".circle-bottom");
+      circleBottom.style.animation = "circle-bottom-move 4s forwards";
+
+      // let circleMiddle = document.querySelector(".circle-middle");
+      // circleMiddle.style.animation = "circle-middle-move 3s forwards";
+
+      console.log(circleTop);
+    }
