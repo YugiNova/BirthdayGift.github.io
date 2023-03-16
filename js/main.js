@@ -9,7 +9,6 @@
 const myAtropos = Atropos({
     el: '.my-atropos',
     // rest of parameters
-    shadow:true
   });
 
 //count_down function

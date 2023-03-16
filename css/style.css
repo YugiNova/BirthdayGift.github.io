@@ -104,6 +104,7 @@ body{
 
 
 .circle-middle{
+    display: none;
     position: absolute;
     left: -160px;
     top: -160px;
@@ -117,6 +118,7 @@ body{
 }
 
 .circle-middle .cirle-pulse{
+    display: none;
     position: absolute;
     background:inherit;
     border-radius: inherit;
@@ -160,8 +162,8 @@ body{
     
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(30px) contrast(90%);
-    backdrop-filter: blur(30px) contrast(90%);
+    -webkit-backdrop-filter: blur(30px) contrast(100%);
+    backdrop-filter: blur(30px) contrast(100%);
     transform-style: preserve-3d;
     transform: perspective(1000px);
     /* overflow: hidden; */
@@ -274,7 +276,7 @@ body{
     padding: 10px;
   }
   .discover-birthday h1{
-    font-size: 25px;
+    font-size: 22px;
     position: relative;
   }
   .discover-birthday h1::before{
