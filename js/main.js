@@ -61,8 +61,8 @@ function count_down() {
       let circleBottom = document.querySelector(".circle-bottom");
       circleBottom.style.animation = "circle-bottom-move 4s forwards";
 
-      // let circleMiddle = document.querySelector(".circle-middle");
-      // circleMiddle.style.animation = "circle-middle-move 3s forwards";
+      let circleMiddle = document.querySelector(".circle-middle");
+      circleMiddle.style.animation = "circle-middle-move 4s forwards 2s";
 
       console.log(circleTop);
     }

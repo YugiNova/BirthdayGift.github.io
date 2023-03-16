@@ -104,12 +104,12 @@ body{
 
 
 .circle-middle{
-    display: none;
     position: absolute;
     left: -160px;
     top: -160px;
     width: 320px;
     height: 320px;
+    opacity: 0;
     border-radius: 50%;
     background: rgb(17,213,221);
     background: radial-gradient(circle, rgba(17,213,221,1) 0%, rgba(21,205,119,1) 29%);
@@ -118,7 +118,6 @@ body{
 }
 
 .circle-middle .cirle-pulse{
-    display: none;
     position: absolute;
     background:inherit;
     border-radius: inherit;
@@ -131,7 +130,7 @@ body{
 }
 @keyframes circle-middle-move {
     100%{
-        transform: scale(320);
+        opacity: 1;
     }
 }
 
