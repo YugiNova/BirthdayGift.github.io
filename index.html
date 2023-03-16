@@ -26,6 +26,7 @@
     <title>Birthday Wishes</title>
   </head>
   <body>
+
     <div class="circle-top">
       <div class="cirle-pulse" style="--i: 0"></div>
       <div class="cirle-pulse" style="--i: 1"></div>
@@ -38,7 +39,6 @@
       <div class="cirle-pulse" style="--i: 2"></div>
       <div class="cirle-pulse" style="--i: 3"></div>
     </div>
-
     <div class="circle-middle">
       <div class="cirle-pulse" style="--i: 0"></div>
       <div class="cirle-pulse" style="--i: 1"></div>
@@ -46,118 +46,126 @@
       <div class="cirle-pulse" style="--i: 3"></div>
     </div>
 
-    <div class="atropos my-atropos container">
-      <!-- scale container (required) -->
-      <div class="atropos-scale">
-        <!-- rotate container (required) -->
-        <div class="atropos-rotate">
-          <!-- inner container (required) -->
-          <div class="atropos-inner calendar-card">
-            <!-- put your custom content here -->
 
-            <div class="birthday-countdown">
-              <div class="animal-of-age" data-atropos-offset="-15">
-                <img src="images/tiger-face.png" alt="" />
-                      <div class='eye left'></div>
-                      <div class='eye right'></div>
+    <div id="wrapper-particles">
+    </div>
+    
+    <div class="atropos my-atropos container">
+        <!-- scale container (required) -->
+        <div class="atropos-scale">
+          <!-- rotate container (required) -->
+          <div class="atropos-rotate">
+            <!-- inner container (required) -->
+            <div class="atropos-inner calendar-card">
+              <!-- put your custom content here -->
+
+              <div class="birthday-countdown">
+                <div class="animal-of-age" data-atropos-offset="-15">
+                  <img src="images/tiger-face.png" alt="" />
+                        <div class='eye left'></div>
+                        <div class='eye right'></div>
+                  </div>
+                <div class="countdown-timer">
+                  <h1 data-atropos-offset="15">
+                    Day
+                    <div id="day"></div>
+                  </h1>
+                  <h1 data-atropos-offset="15">
+                    Hour
+                    <div id="hour"></div>
+                  </h1>
+                  <h1 data-atropos-offset="15">
+                    Minute
+                    <div id="min"></div>
+                  </h1>
+                  <h1 data-atropos-offset="15">
+                    Second
+                    <div id="sec"></div>
+                  </h1>
                 </div>
-              <div class="countdown-timer">
-                <h1 data-atropos-offset="15">
-                  Day
-                  <div id="day"></div>
-                </h1>
-                <h1 data-atropos-offset="15">
-                  Hour
-                  <div id="hour"></div>
-                </h1>
-                <h1 data-atropos-offset="15">
-                  Minute
-                  <div id="min"></div>
-                </h1>
-                <h1 data-atropos-offset="15">
-                  Second
-                  <div id="sec"></div>
-                </h1>
+                <div class="discover-birthday">
+                  <h1 data-text="To day is Your Birthday">To day is Your Birthday</h1>
+                  <button class="magic-card" onclick="clickToDiscover()">
+                    Tap me <br> To discover your day
+                  </button>
+                </div>
               </div>
-              <div class="discover-birthday">
-                <h1 data-text="To day is Your Birthday">To day is Your Birthday</h1>
-                <button class="magic-card" onclick="clickToDiscover()">
-                  Tap me <br> To discover your day
-                </button>
-              </div>
-            </div>
-            <div class="card-content">
-              <div class="calendar dark">
-                <!-- Calendar Header -->
-                <div class="calendar-header">
-                  <span class="month-picker" data-atropos-offset="15" id="month-picker">
-                    February
-                  </span>
-                  <div class="year-picker">
-                    <span class="year-change mt-3" data-atropos-offset="15" id="prev-year">
-                      <pre> < </pre>
+              <div class="card-content">
+                <div class="calendar dark">
+                  <!-- Calendar Header -->
+                  <div class="calendar-header">
+                    <span class="month-picker" data-atropos-offset="15" id="month-picker">
+                      February
                     </span>
-                    <span id="year" data-atropos-offset="15">2023</span>
-                    <span class="year-change mt-3" data-atropos-offset="15" id="next-year">
-                      <pre> > </pre>
-                    </span>
-                  </div>
-                </div>
-                <!-- Calendar Body -->
-                <div class="calendar-body">
-                  <div class="calendar-week-day">
-                    <div data-atropos-offset="35">Sun</div>
-                    <div data-atropos-offset="35">Mon</div>
-                    <div data-atropos-offset="35">Tue</div>
-                    <div data-atropos-offset="35">Wed</div>
-                    <div data-atropos-offset="35">Thu</div>
-                    <div data-atropos-offset="35">Fri</div>
-                    <div data-atropos-offset="35">Sat</div>
-                  </div>
-                  <div class="calendar-day">
-                    <div>
-                      1
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                    <div class="year-picker">
+                      <span class="year-change mt-3" data-atropos-offset="15" id="prev-year">
+                        <pre> < </pre>
+                      </span>
+                      <span id="year" data-atropos-offset="15">2023</span>
+                      <span class="year-change mt-3" data-atropos-offset="15" id="next-year">
+                        <pre> > </pre>
+                      </span>
                     </div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>
-                    <div>7</div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>
-                    <div>7</div>
                   </div>
-                </div>
-                <!-- Calendar Footer -->
-                <div class="calendar-footer">
-                    <div class="toggle">
-                        <span>Dark Mode</span>
-                        <div class="dark-mode-switch">
-                            <div class="dark-mode-switch-ident"></div>
-                        </div>
+                  <!-- Calendar Body -->
+                  <div class="calendar-body">
+                    <div class="calendar-week-day">
+                      <div data-atropos-offset="35">Sun</div>
+                      <div data-atropos-offset="35">Mon</div>
+                      <div data-atropos-offset="35">Tue</div>
+                      <div data-atropos-offset="35">Wed</div>
+                      <div data-atropos-offset="35">Thu</div>
+                      <div data-atropos-offset="35">Fri</div>
+                      <div data-atropos-offset="35">Sat</div>
                     </div>
+                    <div class="calendar-day">
+                      <div>
+                        1
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div>2</div>
+                      <div>3</div>
+                      <div>4</div>
+                      <div>5</div>
+                      <div>6</div>
+                      <div>7</div>
+                      <div>1</div>
+                      <div>2</div>
+                      <div>3</div>
+                      <div>4</div>
+                      <div>5</div>
+                      <div>6</div>
+                      <div>7</div>
+                    </div>
+                  </div>
+                  <!-- Calendar Footer -->
+                  <div class="calendar-footer">
+                      <div class="toggle">
+                          <span>Dark Mode</span>
+                          <div class="dark-mode-switch">
+                              <div class="dark-mode-switch-ident"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="month-list"></div>
                 </div>
-                <div class="month-list"></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
+    
 
+    <!-- Particles JS -->
+    <script type="text/javascript" src="js/particles.min.js"></script>
 
     <!-- Astropos JS -->
     <script type="text/javascript" src="js/atropos.js"></script>
 
+    <!-- Calendar Generator JS -->
     <script type="text/javascript" src="js/calendar.js"></script>
 
     <!-- App JS file -->
