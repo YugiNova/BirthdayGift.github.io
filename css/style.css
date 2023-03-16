@@ -105,14 +105,15 @@ body{
 
 .circle-middle{
     position: absolute;
-    top: 25vh;
-    left: 40vw;
+    left: -160px;
+    top: -160px;
     width: 320px;
     height: 320px;
     border-radius: 50%;
     background: rgb(17,213,221);
     background: radial-gradient(circle, rgba(17,213,221,1) 0%, rgba(21,205,119,1) 29%);
     /* animation:circle-middle-move 3s forwards; */
+    transform: translateY(50vh) translateX(50vw);
 }
 
 .circle-middle .cirle-pulse{
