@@ -9,6 +9,7 @@
 const myAtropos = Atropos({
     el: '.my-atropos',
     // rest of parameters
+    shadow: false
   });
 
 //count_down function
@@ -67,7 +68,8 @@ function count_down() {
       let starsky = document.querySelector("#wrapper-particles");
       starsky.style.animation = "sky-effect 3s forwards 2s";
 
-      console.log(circleTop);
+      let calendarCard = document.querySelector(".container");
+      calendarCard.style.animation = "disapear-calendar 3s forwards 1s";
     }
 
 
@@ -181,4 +183,10 @@ function count_down() {
         }
       },
       "retina_detect": true
+    });
+
+    //Swipper JS
+    var swiper = new Swiper(".card-slider", {
+      effect: "cards",
+      grabCursor: true,
     });

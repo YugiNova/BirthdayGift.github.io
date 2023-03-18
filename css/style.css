@@ -25,7 +25,6 @@ body{
     right: 0;
     z-index: 0;
     opacity: 0;
-    animation: sky-effect 3s forwards 2s;
 }
 @keyframes sky-effect {
     100%{
@@ -166,6 +165,14 @@ body{
     z-index: 10;
     max-width: 1200px;
     flex-wrap: wrap;
+    opacity: 1;
+    /* animation: disapear-calendar 3s forwards; */
+}
+@keyframes disapear-calendar {
+    100%{
+        opacity: 0;
+        display: none;
+    }
 }
 .calendar-card{
     position: relative;
@@ -374,6 +381,79 @@ body{
     filter: blur(calc(450px / 6));
     animation: spin 1.5s linear infinite;
     background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
+  }
+
+
+
+  /* swipper-card */
+  .card-slider{
+    width: 300px;
+	height: 450px;
+  }
+
+  .swiper-slide{
+    overflow: hidden;
+  }
+  .gift-card {
+    margin: 10px;
+    height: 400px;
+    width: 250px;
+    background: #191c29;
+    padding: 10px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .gift-card::before {
+    content: "";
+    width: 108%;
+    height: 106%;
+    top: -3%;
+    left: -4%;
+    border-radius: 8px;
+    position: absolute;
+    z-index: -2;
+    animation: spin 1.5s linear infinite;
+    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
+  }
+  /* .gift-card::after {
+    position: absolute;
+    content: "";
+    top: calc(450px / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity .5s;
+    transform: scale(0.8);
+    filter: blur(calc(450px / 6));
+    animation: spin 1.5s linear infinite;
+    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
+  } */
+
+  /* varius card color */
+  .fire::before,.fire::after{
+    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
+  }
+  .water::before,.water::after{
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 48%);
+  }
+  .wood::before,.wood::after{
+    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
+  }
+  .earth::before,.earth::after{
+    background-image: linear-gradient(var(--rotate), #ffda79, #cc8e35 48%);
+  }
+  .metal::before,.metal::after{
+    background-image: linear-gradient(var(--rotate), #dfe6e9, #636e72 48%);
   }
   
   

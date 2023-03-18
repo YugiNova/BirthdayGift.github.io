@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +19,9 @@
     <!-- Canlendar css -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/calendar.css">
+
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- App css -->
     <link rel="stylesheet" href="css/style.css" />
@@ -50,7 +53,7 @@
     <div id="wrapper-particles">
     </div>
     
-    <div class="atropos my-atropos container">
+    <div class="atropos my-atropos container" style="display: none;">
         <!-- scale container (required) -->
         <div class="atropos-scale">
           <!-- rotate container (required) -->
@@ -157,6 +160,26 @@
           </div>
         </div>
     </div>
+
+    <div class="card-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="gift-card fire"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gift-card water"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gift-card wood"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gift-card earth"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="gift-card metal"></div>
+        </div>
+      </div>
+    </div>
     
 
     <!-- Particles JS -->
@@ -167,6 +190,9 @@
 
     <!-- Calendar Generator JS -->
     <script type="text/javascript" src="js/calendar.js"></script>
+
+    <!-- Swipper Card -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- App JS file -->
     <script type="text/javascript" src="js/main.js"></script>
