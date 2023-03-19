@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@font-face {
+  font-family: handwritting;
+  src: url(../font/angelina/angelina.TTF);
+}
 * {
   margin: 0;
   padding: 0;
@@ -492,5 +497,48 @@ body {
   }
   to {
     transform: rotate(360deg) scale(1.85);
+  }
+}
+
+/* Happy Birthday text */
+.happy-birthday-text{
+  
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  
+}
+.happy-birthday-text span{
+  font-family: 'Fasthand', cursive;
+  animation: happy-birthday 3s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes happy-birthday {
+  0%{
+    color: #fff;
+    filter: blur(1px) hue-rotate(0deg);
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 120px #00b3ff,
+    0 0 200px #00b3ff,
+    0 0 300px #00b3ff,
+    0 0 400px #00b3ff
+  }
+  30%,70%{
+    color: #fff;
+    filter: blur(1px) hue-rotate(360deg);
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 120px #00b3ff,
+    0 0 200px #00b3ff
+  }
+  100%{
+    color: transparent;
+    box-shadow: none;
+    filter: blur(1px) hue-rotate(0deg);
   }
 }
