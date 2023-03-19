@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Concert One', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Concert One", cursive;
 }
-body{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    
-    background-color: black;
-    position: relative;
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  position: relative;
 }
 
-#wrapper-particles{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-    opacity: 0;
+#wrapper-particles {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0;
 }
 @keyframes sky-effect {
-    100%{
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 /* body::before{
     content: "";
@@ -56,404 +56,441 @@ body{
     box-shadow: 0 0 105px 45px rgba(63,139,251,1);
 } */
 /* MOON & SUN HANDLE */
-.circle-top{
-    position: absolute;
-    top: -160px;
-    left: -160px;
-    width: 320px;
-    height: 320px;
-    
-    border-radius: 50%;
-    background: rgba(63,139,251,1);
-    background: radial-gradient(circle,rgba(63,139,251,1), rgba(70,226,252,1));
-    /* transition: transform 5s ease; */
+.circle-top {
+  position: absolute;
+  top: -160px;
+  left: -160px;
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+  background: rgba(63, 139, 251, 1);
+  background: radial-gradient(
+    circle,
+    rgba(63, 139, 251, 1),
+    rgba(70, 226, 252, 1)
+  );
+  /* transition: transform 5s ease; */
 }
 @keyframes circle-top-move {
-    100%{
-        transform: translateX(50vw) translateY(50vh);
-    }
+  100% {
+    transform: translateX(50vw) translateY(50vh);
+  }
 }
 
-.circle-top .cirle-pulse{
-    position: absolute;
-    background:inherit;
-    border-radius: inherit;
-    width: 320px;
-    height: 320px;
-    opacity: 0.8;
-    animation: pulse 4s ease-out infinite;
-    animation-delay: calc(1s * var(--i));
-    box-shadow: 0 0 105px 45px rgba(63,139,251,1);
+.circle-top .cirle-pulse {
+  position: absolute;
+  background: inherit;
+  border-radius: inherit;
+  width: 320px;
+  height: 320px;
+  opacity: 0.8;
+  animation: pulse 4s ease-out infinite;
+  animation-delay: calc(1s * var(--i));
+  box-shadow: 0 0 105px 45px rgba(63, 139, 251, 1);
 }
-.circle-bottom{
-    position: absolute;
-    bottom: -160px;
-    right: -160px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: rgb(255,132,0);
-    background: radial-gradient(circle, rgba(255,132,0,1) 0%, rgba(241,8,8,1) 72%);
-    /* transition: transform 5s ease; */
-    
+.circle-bottom {
+  position: absolute;
+  bottom: -160px;
+  right: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgb(255, 132, 0);
+  background: radial-gradient(
+    circle,
+    rgba(255, 132, 0, 1) 0%,
+    rgba(241, 8, 8, 1) 72%
+  );
+  /* transition: transform 5s ease; */
 }
 @keyframes circle-bottom-move {
-    100%{
-        transform: translateX(-50vw) translateY(-50vh);
-    }
+  100% {
+    transform: translateX(-50vw) translateY(-50vh);
+  }
 }
 
-
-.circle-bottom .cirle-pulse{
-    position: absolute;
-    background:inherit;
-    border-radius: inherit;
-    width: 320px;
-    height: 320px;
-    opacity: 0.8;
-    animation: pulse 4s ease-out infinite;
-    animation-delay: calc(1s * var(--i));
-    box-shadow: 0 0 105px 45px rgba(255,132,0,1);
+.circle-bottom .cirle-pulse {
+  position: absolute;
+  background: inherit;
+  border-radius: inherit;
+  width: 320px;
+  height: 320px;
+  opacity: 0.8;
+  animation: pulse 4s ease-out infinite;
+  animation-delay: calc(1s * var(--i));
+  box-shadow: 0 0 105px 45px rgba(255, 132, 0, 1);
 }
 
-
-
-.circle-middle{
-    position: absolute;
-    left: -160px;
-    top: -160px;
-    width: 320px;
-    height: 320px;
-    opacity: 0;
-    border-radius: 50%;
-    background: rgb(17,213,221);
-    background: radial-gradient(circle, rgba(17,213,221,1) 0%, rgba(21,205,119,1) 29%);
-    /* animation:circle-middle-move 3s forwards; */
-    transform: translateY(50vh) translateX(50vw);
+.circle-middle {
+  position: absolute;
+  left: -160px;
+  top: -160px;
+  width: 320px;
+  height: 320px;
+  opacity: 0;
+  border-radius: 50%;
+  background: rgb(17, 213, 221);
+  background: radial-gradient(
+    circle,
+    rgba(17, 213, 221, 1) 0%,
+    rgba(21, 205, 119, 1) 29%
+  );
+  /* animation:circle-middle-move 3s forwards; */
+  transform: translateY(50vh) translateX(50vw);
 }
 
-.circle-middle .cirle-pulse{
-    position: absolute;
-    background:inherit;
-    border-radius: inherit;
-    width: 320px;
-    height:320px;
-    opacity: 0.8;
-    animation: pulse 4s ease-out infinite;
-    animation-delay: calc(1s * var(--i));
-    box-shadow: 0 0 105px 45px rgba(21,205,119,1);
+.circle-middle .cirle-pulse {
+  position: absolute;
+  background: inherit;
+  border-radius: inherit;
+  width: 320px;
+  height: 320px;
+  opacity: 0.8;
+  animation: pulse 4s ease-out infinite;
+  animation-delay: calc(1s * var(--i));
+  box-shadow: 0 0 105px 45px rgba(21, 205, 119, 1);
 }
 @keyframes circle-middle-move {
-    100%{
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse {
-    100% {
-        transform: scale(2);
-        opacity: 0;  
-    }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 /* BIRTHDAY CARD */
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    opacity: 1;
-    /* animation: disapear-calendar 3s forwards; */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  opacity: 1;
+  /* animation: disapear-calendar 3s forwards; */
 }
 @keyframes disapear-calendar {
-    100%{
-        opacity: 0;
-        display: none;
-    }
-}
-.calendar-card{
-    position: relative;
-    height: auto;
-    width: 300px;
-    background:rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(30px) contrast(100%);
-    backdrop-filter: blur(30px) contrast(100%);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    /* overflow: hidden; */
-}
-.card-content{
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px;
-}
-
-
-.birthday-countdown{
-    width: 100%;
-    height: auto;
-    background-color: rgba(51,24,51,0.349);
-    /* background-color: rgba(51, 24, 51, 0.349); */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-}
-.birthday-countdown .countdown-timer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 5;
+  100% {
+    opacity: 0;
     display: none;
+  }
 }
-.birthday-countdown .countdown-timer h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 22px;
-    padding: 15px 5px;
-    color: #fff;
-    background: #833ab4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: 0.5s ease;
-    animation: countdown-rotation 1s forwards;
+.calendar-card {
+  position: relative;
+  height: auto;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(30px) contrast(100%);
+  backdrop-filter: blur(30px) contrast(100%);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  /* overflow: hidden; */
+}
+.card-content {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+.birthday-countdown {
+  width: 100%;
+  height: auto;
+  background-color: rgba(51, 24, 51, 0.349);
+  /* background-color: rgba(51, 24, 51, 0.349); */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.birthday-countdown .countdown-timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 5;
+  display: none;
+}
+.birthday-countdown .countdown-timer h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 22px;
+  padding: 15px 5px;
+  color: #fff;
+  background: #833ab4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease;
+  animation: countdown-rotation 1s forwards;
 }
 
 @keyframes countdown-rotation {
-    0%{
-        transform: rotateX(0deg);
-    }
-    100%{
-        transform: rotateX(360deg);
-    }
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
 }
 
-.birthday-countdown .animal-of-age{
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    z-index: 1;
+.birthday-countdown .animal-of-age {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  z-index: 1;
 }
-.birthday-countdown img{
-    height: 100%;
-    width: 100%;
-    transform: translateZ(20px);
-    box-shadow: 0 0 50px 0 rgb(51 51 51 / 30%);
+.birthday-countdown img {
+  height: 100%;
+  width: 100%;
+  transform: translateZ(20px);
+  box-shadow: 0 0 50px 0 rgb(51 51 51 / 30%);
 }
 .eye {
-    position: absolute;
-    display: inline-block;
+  position: absolute;
+  display: inline-block;
 
-    border-radius: 50%;
-    height: 18px;
-    width: 18px;
-    background: white;
-    z-index: 2;
-  }
-.left{
-    left: 107px;
-    top:148px;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background: white;
+  z-index: 2;
 }
-.right{
-    right: 110px;
-    top:148px;
+.left {
+  left: 107px;
+  top: 148px;
 }
-  .eye::before { 
-    position: absolute;
-    transform: translate(-1%, -1%);
-    width: 13px;
-    height: 13px;
-    background: black;
-    border-radius: 50%;
-    content: " ";
+.right {
+  right: 110px;
+  top: 148px;
+}
+.eye::before {
+  position: absolute;
+  transform: translate(-1%, -1%);
+  width: 13px;
+  height: 13px;
+  background: black;
+  border-radius: 50%;
+  content: " ";
+}
+.discover-birthday {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  padding: 10px;
+}
+.discover-birthday h1 {
+  font-size: 22px;
+  position: relative;
+}
+.discover-birthday h1::before {
+  position: absolute;
+  content: attr(data-text);
+  color: white;
+  border-right: 4px solid #fff;
+  top: 0;
+  left: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: text-effect 8s linear infinite;
+  filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff);
+}
+@keyframes text-effect {
+  0%,
+  10%,
+  100% {
+    width: 0;
   }
-  .discover-birthday{
-    display: flex;
+  70%,
+  90% {
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    flex-direction: column;
-    padding: 10px;
   }
-  .discover-birthday h1{
-    font-size: 22px;
-    position: relative;
-  }
-  .discover-birthday h1::before{
-    position: absolute;
-    content: attr(data-text);
-    color: white;
-    border-right: 4px solid #fff;
-    top: 0;
-    left: 0;
-    width: 0%;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: text-effect 8s linear infinite;
-    filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff)
-  }
-  @keyframes text-effect {
-    0%,10%,100%{
-        width: 0;
-    }
-    70%,90%{
-        width: 100%;
-    }
-  }
-  /* .discover-birthday button{
+}
+/* .discover-birthday button{
     font-size: 20px;
     padding: 5px 20px;
     margin-top: 10px;
     cursor: pointer;
   } */
 
-  @property --rotate {
+/* @property --rotate {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-  }
-  @keyframes spin {
-    0% { --rotate: 0deg; }
-    100% { --rotate: 360deg; }
-  }
-  
-  .magic-card {
-    margin: 10px;
-    background: #191c29;
-    padding: 10px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-  }
-  .magic-card::before {
-    content: "";
-    width: 106%;
-    height: 120%;
-    top: -10%;
-    left: -3%;
-    border-radius: 8px;
-    position: absolute;
-    z-index: -1;
-    animation: spin 1.5s linear infinite;
-    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
-  }
-  .magic-card::after {
-    position: absolute;
-    content: "";
-    top: calc(450px / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    opacity: 1;
-    transition: opacity .5s;
-    transform: scale(0.8);
-    filter: blur(calc(450px / 6));
-    animation: spin 1.5s linear infinite;
-    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
-  }
-
-
-
-  /* swipper-card */
-  .card-slider{
-    width: 300px;
-	height: 450px;
-  }
-
-  .swiper-slide{
-    overflow: hidden;
-  }
-  .gift-card {
-    margin: 10px;
-    height: 400px;
-    width: 250px;
-    background: #191c29;
-    padding: 10px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-  }
-  .gift-card::before {
-    content: "";
-    width: 108%;
-    height: 106%;
-    top: -3%;
-    left: -4%;
-    border-radius: 8px;
-    position: absolute;
-    z-index: -2;
-    animation: spin 1.5s linear infinite;
-    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
-  }
-  /* .gift-card::after {
-    position: absolute;
-    content: "";
-    top: calc(450px / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    opacity: 1;
-    transition: opacity .5s;
-    transform: scale(0.8);
-    filter: blur(calc(450px / 6));
-    animation: spin 1.5s linear infinite;
-    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
   } */
+.magic-card-wrapper{
+  margin-top: 10px;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.magic-card {
+  background: #191c29;
+  padding: 10px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+.magic-card::before {
+  content: "";
+  width: 106%;
+  height: 120%;
+  top: -10%;
+  left: -3%;
+  border-radius: 8px;
+  position: absolute;
+  z-index: -1;
+  animation: rotate-gradient-button linear 0.5s infinite;
+  background-image: linear-gradient(#81ecec, #00b894 48%);
+  
+}
+/* .magic-card::after {
+  position: absolute;
+  content: "";
+  top: calc(450px / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity 0.5s;
+  transform: scale(0.8);
+  filter: blur(calc(450px / 6));
+  animation: rotate-gradient linear 1s infinite;
+  background-image: linear-gradient(#81ecec, #00b894 48%);
+} */
 
-  /* varius card color */
-  .fire::before,.fire::after{
-    background-image: linear-gradient(var(--rotate), #ff6b81, #d63031 48%);
+@keyframes rotate-gradient-button {
+  from {
+    transform: rotate(0deg) scale(2.8);
   }
-  .water::before,.water::after{
-    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 48%);
+  to {
+    transform: rotate(360deg) scale(2.8);
   }
-  .wood::before,.wood::after{
-    background-image: linear-gradient(var(--rotate), #81ecec, #00b894 48%);
+}
+
+/* swipper-card */
+.card-slider {
+  position: absolute;
+  width: 270px;
+  height: 424px;
+  opacity: 0;
+  bottom: -50vh;
+  z-index: 10;
+  /* animation: show-swipper 3s forwards; */
+}
+@keyframes show-swipper {
+  50%{
+    opacity: 0.5;
   }
-  .earth::before,.earth::after{
-    background-image: linear-gradient(var(--rotate), #ffda79, #cc8e35 48%);
+  100% {
+    opacity: 1;
+    bottom: 25vh;
   }
-  .metal::before,.metal::after{
-    background-image: linear-gradient(var(--rotate), #dfe6e9, #636e72 48%);
-  }
+}
+.swiper-slide {
   
+  border-radius: 10px;
+  overflow: hidden;
+}
+.gift-card {
+  margin: 10px;
+  height: 400px;
+  width: 250px;
+  background: #191c29;
+  padding: 10px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
   
+}
+.gift-card::before {
+  content: "";
+  width: 108%;
+  height: 106%;
+  top: -3%;
+  left: -4%;
+  border-radius: 8px;
+  position: absolute;
+  z-index: -2;
+  animation: rotate-gradient linear 1s infinite;
+  /* animation: spin 1.5s linear infinite; */
+}
+
+/* varius card color */
+.fire::before {
+  background-image: linear-gradient(#ff6b81, #d63031 48%);
+}
+.water::before,
+.water::after {
+  background-image: linear-gradient(#5ddcff, #3c67e3 48%);
+}
+.wood::before,
+.wood::after {
+  background-image: linear-gradient(#81ecec, #00b894 48%);
+}
+.earth::before,
+.earth::after {
+  background-image: linear-gradient(#ffda79, #cc8e35 48%);
+}
+.metal::before,
+.metal::after {
+  background-image: linear-gradient(#dfe6e9, #636e72 48%);
+}
+
+@keyframes rotate-gradient {
+  from {
+    transform: rotate(0deg) scale(1.85);
+  }
+  to {
+    transform: rotate(360deg) scale(1.85);
+  }
+}
