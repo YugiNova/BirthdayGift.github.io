@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 @font-face {
   font-family: handwritting;
-  src: url(../font/angelina/angelina.TTF);
+  src: url(../font/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
+}
+@font-face {
+  font-family: giftfont;
+  src: url(../font/cassandra-font/CassandraPersonalUseRegular-3BjG.ttf);
 }
 * {
   margin: 0;
@@ -80,6 +84,7 @@ body {
 @keyframes circle-top-move {
   100% {
     transform: translateX(50vw) translateY(50vh);
+    display: none;
   }
 }
 
@@ -112,6 +117,7 @@ body {
 @keyframes circle-bottom-move {
   100% {
     transform: translateX(-50vw) translateY(-50vh);
+    display: none;
   }
 }
 
@@ -470,6 +476,32 @@ body {
   /* animation: spin 1.5s linear infinite; */
 }
 
+.gift-card .cover h2{
+  font-family: 'giftfont', cursive;
+  font-size: 20px;
+}
+
+.gift-card .cover h1{
+  font-family: 'giftfont', cursive;
+  font-size: 30px;
+}
+
+.fire .cover{
+  color: #ff6b81;
+}
+.water .cover{
+  color: #5ddcff;
+}
+.wood .cover{
+  color: #81ecec;
+}
+.earth .cover{
+  color: #ffda79;
+}
+.metal .cover{
+  color: #dfe6e9;
+}
+
 /* varius card color */
 .fire::before {
   background-image: linear-gradient(#ff6b81, #d63031 48%);
@@ -505,13 +537,14 @@ body {
   
   text-align: center;
   margin-bottom: 20px;
-  font-size: 25px;
+  
   
 }
 .happy-birthday-text span{
-  font-family: 'Fasthand', cursive;
+  font-family: 'handwritting', cursive;
   animation: happy-birthday 3s linear infinite;
   animation-delay: calc(0.1s * var(--i));
+  font-size: 18px;
 }
 @keyframes happy-birthday {
   0%{

@@ -73,7 +73,7 @@ function count_down() {
 
       let swipperCard = document.querySelector(".card-slider");
       swipperCard.style.animation = "show-swipper 2s forwards 2s";
-    }
+    } 
 
 
     //custom particles
