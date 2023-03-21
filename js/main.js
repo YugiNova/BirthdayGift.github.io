@@ -75,6 +75,13 @@ function count_down() {
       swipperCard.style.animation = "show-swipper 2s forwards 2s";
     } 
 
+    //click to view wishes
+    const wishesAnimation = (wishes) => {
+      console.log(wishes.parentNode.parentNode.querySelector(".wishes"));
+      wishes.style.maxHeight = "0px";
+      let wishesContent = wishes.parentNode.parentNode.querySelector(".wishes");
+      wishesContent.style.height = "80%";
+    }
 
     //custom particles
     particlesJS("wrapper-particles", {

@@ -8,6 +8,10 @@
   font-family: giftfont;
   src: url(../font/cassandra-font/CassandraPersonalUseRegular-3BjG.ttf);
 }
+@font-face {
+  font-family: giftfont2;
+  src: url(../font/beautiful-people-font/BeautifulPeoplePersonalUse-dE0g.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -457,6 +461,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
   display: flex;
   font-size: 20px;
   color: white;
@@ -479,26 +484,42 @@ body {
 .gift-card .cover h2{
   font-family: 'giftfont', cursive;
   font-size: 20px;
+  overflow: hidden;
+  transition: 5s ease;
+}
+@keyframes wishes-title-animation {
+  100%{
+    height: 0px;
+  }
 }
 
 .gift-card .cover h1{
   font-family: 'giftfont', cursive;
   font-size: 30px;
 }
+.gift-card .wishes{
+  height: 0;
+  overflow: hidden;
+  transition: 2s ease;
+}
+.gift-card .wishes p{
+  font-family: 'giftfont2', cursive;
+  font-size: 18px;
+}
 
-.fire .cover{
+.fire .cover,.fire .wishes{
   color: #ff6b81;
 }
-.water .cover{
+.water .cover,.water .wishes{
   color: #5ddcff;
 }
-.wood .cover{
+.wood .cover, .wood .wishes{
   color: #81ecec;
 }
-.earth .cover{
+.earth .cover, .earth .wishes{
   color: #ffda79;
 }
-.metal .cover{
+.metal .cover, .metal .wishes{
   color: #dfe6e9;
 }
 
