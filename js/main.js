@@ -72,7 +72,7 @@ function count_down() {
       calendarCard.style.animation = "disapear-calendar 3s forwards 1s";
 
       let swipperCard = document.querySelector(".card-slider");
-      swipperCard.style.animation = "show-swipper 2s forwards 2s";
+      swipperCard.style.animation = "show-swipper 1s forwards 4s";
 
 
       setTimeout(()=>{

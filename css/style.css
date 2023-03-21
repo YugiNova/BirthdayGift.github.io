@@ -435,7 +435,7 @@ body {
   opacity: 0;
   bottom: -50vh;
   z-index: 10;
-  /* animation: show-swipper 3s forwards; */
+  animation: show-swipper 3s forwards;
 }
 @keyframes show-swipper {
   50%{
