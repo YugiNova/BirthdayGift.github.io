@@ -62,10 +62,8 @@ function count_down() {
       let circleBottom = document.querySelector(".circle-bottom");
       circleBottom.style.animation = "circle-bottom-move 4s forwards";
 
-      
-
-      // let circleMiddle = document.querySelector(".circle-middle");
-      // circleMiddle.style.animation = "circle-middle-move 4s forwards 2s";
+      let circleMiddle = document.querySelector(".circle-middle");
+      circleMiddle.style.animation = "circle-middle-move 4s forwards 2s";
 
       let starsky = document.querySelector("#wrapper-particles");
       starsky.style.animation = "sky-effect 3s forwards 2s";
@@ -76,8 +74,13 @@ function count_down() {
       let swipperCard = document.querySelector(".card-slider");
       swipperCard.style.animation = "show-swipper 2s forwards 2s";
 
-      circleTop.remove();
-      circleBottom.remove();
+
+      setTimeout(()=>{
+        circleTop.remove();
+        circleBottom.remove();
+        calendarCard.remove();
+      },4000)
+      
     } 
 
     //click to view wishes
