@@ -91,6 +91,13 @@ function count_down() {
       wishesContent.style.height = "80%";
     }
 
+    const lastWishes = (wishes) => {
+      let secondCover = wishes.parentNode.parentNode.querySelector(".second-cover"); 
+      console.log(wishes);
+      secondCover.style.animation = "showSecondCover 2s forwards";
+      wishes.style.display = "none"
+    }
+
     //custom particles
     particlesJS("wrapper-particles", {
       "particles": {

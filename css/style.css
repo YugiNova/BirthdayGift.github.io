@@ -12,6 +12,11 @@
   font-family: giftfont2;
   src: url(../font/beautiful-people-font/BeautifulPeoplePersonalUse-dE0g.ttf);
 }
+
+@font-face {
+  font-family: giftfont3;
+  src: url(../font/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -486,6 +491,7 @@ body {
   font-size: 20px;
   overflow: hidden;
   transition: 5s ease;
+  line-height: 2;
 }
 @keyframes wishes-title-animation {
   100%{
@@ -497,6 +503,34 @@ body {
   font-family: 'giftfont', cursive;
   font-size: 30px;
 }
+
+.gift-card .cover span{
+  font-family: 'giftfont', cursive;
+}
+
+.metal .second-cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  /* animation: showSecondCover 2s forwards; */
+  font-family: 'giftfont3', cursive !important;
+  font-size: 10px;
+  color: #636e72;
+}
+.metal .second-cover h2{
+  
+}
+@keyframes showSecondCover {
+  100%{
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
 .gift-card .wishes{
   height: 0;
   overflow: hidden;
