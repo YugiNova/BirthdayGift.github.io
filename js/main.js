@@ -6,6 +6,8 @@
 //It also supports NodeList
 // VanillaTilt.init(document.querySelectorAll(".calendar-card"));
 
+
+
 const myAtropos = Atropos({
     el: '.my-atropos',
     // rest of parameters
@@ -224,14 +226,30 @@ function count_down() {
       grabCursor: true,
     });
 
+    let wishesData = [];
+    axios.get("https://641ad7369b82ded29d4314bd.mockapi.io/wishes")
+      .then((res)=>{
+        console.log(res.data);
+        wishesData.push(res.data);
+      })
+
+      const dateArr = wishesData.forEach(item => {
+        console.log(item.id); 
+      })
+      
+    
 
     document.querySelectorAll('.btn-send-wishes').forEach(button => {
 
       let getVar = variable => getComputedStyle(button).getPropertyValue(variable);
   
       button.addEventListener('click', e => {
-          console.log("clicked");
-  
+          
+          let wishesContent = document.querySelector("#your-last-wishes").value;
+          let wishesDate = new Date();
+          axios.post("https://641ad7369b82ded29d4314bd.mockapi.io/wishes",{date: wishesDate ,wishes : wishesContent}).then((res)=>{console.log(res.data);})
+
+          
           if(!button.classList.contains('active')) {
   
               button.classList.add('active');
@@ -334,7 +352,13 @@ function count_down() {
               })
   
           }
-  
+          
+          setInterval(()=>{
+            let lastWishes = document.querySelector(".metal .last-wishes");
+            lastWishes.style.display = "none";
+            let lastCover = document.querySelector(".last-cover");
+            lastCover.style.animation = "last-cover 2s forwards"
+          },1500)
       })
   
   });

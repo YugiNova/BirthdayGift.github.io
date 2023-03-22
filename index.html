@@ -201,7 +201,7 @@
         <div class="swiper-slide">
           <div class="gift-card fire">
             <div class="cover">
-              <h2 onclick="wishesAnimation(this)">First <br> wish</h2>
+              <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>First <br> wishes</h2>
               <h1>Happy</h1>
             </div>
             <div class="wishes">
@@ -214,7 +214,7 @@
         <div class="swiper-slide">
           <div class="gift-card water">
             <div class="cover">
-              <h2 onclick="wishesAnimation(this)">Second <br> wish</h2>
+              <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Second <br> wishes</h2>
               <h1>Luck</h1>
             </div>
             <div class="wishes">
@@ -227,7 +227,7 @@
         <div class="swiper-slide">
           <div class="gift-card wood">
             <div class="cover">
-              <h2 onclick="wishesAnimation(this)">Third <br> wish</h2>
+              <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Third <br> wishes</h2>
               <h1>Success</h1>
             </div>
             <div class="wishes">
@@ -240,7 +240,7 @@
         <div class="swiper-slide">
           <div class="gift-card earth">
             <div class="cover">
-              <h2 onclick="wishesAnimation(this)">Fourth <br> wish</h2>
+              <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Fourth <br> wishes</h2>
               <h1>Health</h1>
             </div>
             <div class="wishes">
@@ -255,11 +255,11 @@
             <div class="cover">
               <h2 onclick="lastWishes(this)" style="font-size: 14px;">
                 I wishes you will keep both <span style="color:#cc8e35">healthy</span> and <span  style="color:#00b894">successful</span>, always get lots of <span  style="color:#3c67e3">luck</span>. And you will become the <span  style="color:#d63031">happiest</span> person in the world 
-                And there is another wish, the last wish...<br>
+                And there is another wish, the last wishes...<br>
                 >> Tap here <<
               </h2>
               <h2 class="second-cover" onclick="secondCover(this)">
-                The last wish is your wishes to yourself on your next year's birthday, to you in the future,... <br>
+                The last wishes is your wishes to yourself on your next year's birthday, to you in the future,... <br>
                 It can be goals, promises, wishes for yourself next year and you can only revisit this day next year <br>
                 >> now tap if you ready to make this last wish <<
               </h2>
@@ -274,6 +274,10 @@
                 <div class="right"></div>
               </button>
             </div>
+            <h2 class="last-cover">
+              Your wishes have been sent to the future <br>
+              You can only watch it again on your next year's birthday
+            </h2>
           </div>
         </div>
       </div>
@@ -291,8 +295,11 @@
     <!-- Swipper Card -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <!-- GSAP Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
+    <!-- Axios  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- App JS file -->
     <script type="text/javascript" src="js/main.js"></script>
