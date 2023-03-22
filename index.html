@@ -256,16 +256,23 @@
               <h2 onclick="lastWishes(this)" style="font-size: 14px;">
                 I wishes you will keep both <span style="color:#cc8e35">healthy</span> and <span  style="color:#00b894">successful</span>, always get lots of <span  style="color:#3c67e3">luck</span>. And you will become the <span  style="color:#d63031">happiest</span> person in the world 
                 And there is another wish, the last wish...<br>
-                Tap here 
+                >> Tap here <<
               </h2>
-              <h2 class="second-cover">
+              <h2 class="second-cover" onclick="secondCover(this)">
                 The last wish is your wishes to yourself on your next year's birthday, to you in the future,... <br>
                 It can be goals, promises, wishes for yourself next year and you can only revisit this day next year <br>
                 >> now tap if you ready to make this last wish <<
               </h2>
             </div>
             <div class="last-wishes">
-              adasdasd
+              <textarea id="your-last-wishes" cols="35" placeholder="Type your wishes here, only English...."></textarea>
+              <!-- <input type="text" id="your-last-wishes"> -->
+              <button class="btn-send-wishes">
+                <span class="default">Send</span>
+                <span class="success">Sent</span>
+                <div class="left"></div>
+                <div class="right"></div>
+              </button>
             </div>
           </div>
         </div>
@@ -283,6 +290,9 @@
 
     <!-- Swipper Card -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
 
     <!-- App JS file -->
     <script type="text/javascript" src="js/main.js"></script>
