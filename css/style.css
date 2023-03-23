@@ -78,6 +78,20 @@ body {
     box-shadow: 0 0 105px 45px rgba(63,139,251,1);
 } */
 /* MOON & SUN HANDLE */
+.circle-green{
+    display: none;
+    position: absolute;
+    top: -175px;
+    left: -175px;
+    transform: translateX(50vw) translateY(50vh);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(63,251,110,1);
+    background: radial-gradient(circle,rgba(63,251,110,1), rgba(70,252,158,1) 72%);
+    box-shadow: 0 0 105px 45px rgba(63,251,110,1);
+    z-index: 0;
+}
 .circle-top {
   position: absolute;
   top: -160px;
@@ -212,7 +226,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(30px) contrast(100%);
@@ -257,6 +270,7 @@ body {
 @keyframes hide-countdown {
   100%{
     height: 0;
+    padding: 0;
   }
 }
 .birthday-countdown .countdown-timer h1 {
@@ -308,8 +322,9 @@ body {
   box-shadow: 0 0 50px 0 rgb(51 51 51 / 30%);
 }
 .eye {
+  display: none;
   position: absolute;
-  display: inline-block;
+  /* display: inline-block; */
 
   border-radius: 50%;
   height: 18px;
@@ -347,38 +362,77 @@ body {
 }
 @keyframes show-discover {
   100%{
-    height: 140px;
+    height: auto;
     padding: 10px;
+
   }
 }
 
 .discover-birthday h1 {
   font-size: 22px;
   position: relative;
-  overflow: hidden;
+  color: hsl(0, 0%, 28%);
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+  text-transform: uppercase;
 }
-.discover-birthday h1::before {
-  position: absolute;
-  content: attr(data-text);
-  color: white;
-  border-right: 4px solid #fff;
-  top: 0;
-  left: 0;
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: text-effect 8s linear infinite;
-  filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff);
+.discover-birthday h1{
+  background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
 }
-@keyframes text-effect {
-  0%,
-  10%,
-  100% {
-    width: 0;
+
+@keyframes shine {
+  0% {
+    background-position: 0;
   }
-  70%,
-  90% {
-    width: 100%;
+  100% {
+    background-position: 600px;
+  }
+}
+
+.discover-birthday h1:before,
+.discover-birthday h1:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.discover-birthday h1:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.discover-birthday h1:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
   }
 }
 /* .discover-birthday button{
@@ -639,49 +693,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
   }
 }
 
-/* Happy Birthday text */
-.happy-birthday-text{
-  
-  text-align: center;
-  margin-bottom: 20px;
-  
-  
-}
-.happy-birthday-text span{
-  font-family: 'handwritting', cursive;
-  animation: happy-birthday 3s linear infinite;
-  animation-delay: calc(0.1s * var(--i));
-  font-size: 18px;
-}
-@keyframes happy-birthday {
-  0%{
-    color: #fff;
-    filter: blur(1px) hue-rotate(0deg);
-    text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff,
-    0 0 200px #00b3ff,
-    0 0 300px #00b3ff,
-    0 0 400px #00b3ff
-  }
-  30%,70%{
-    color: #fff;
-    filter: blur(1px) hue-rotate(360deg);
-    text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff,
-    0 0 200px #00b3ff
-  }
-  100%{
-    color: transparent;
-    box-shadow: none;
-    filter: blur(1px) hue-rotate(0deg);
-  }
-}
 
 .btn-send-wishes {
   --primary: #f62682;
@@ -865,4 +876,121 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
   font-family: "authorfont",cursive;
   font-weight: bold;
   font-size: 22px;
+}
+
+/* Happy Birthday text */
+.happy-birthday{
+  position: absolute;
+  top: 10vh;
+  opacity: 0;
+  /* animation: show-happy-text 5s forwards 2s; */
+  z-index: 1;
+}
+@keyframes show-happy-text {
+  100%{
+    opacity: 1;
+  }
+}
+:root {
+  --color-background: #31037D;
+  --axis-x: 1px;
+  --axis-y: 1rem;
+  --delay: 10;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-orange: #D49C3D;
+  --color-red: #D14B3D;
+  --color-violet: #CF52EB;
+  --color-blue: #44A3F7;
+  --color-green: #5ACB3C;
+  --color-yellow: #DEBF40;
+  --color-foreground: var(--color-white);
+  --font-name: Righteous;
+}
+
+.c-rainbow {
+  counter-reset: rainbow;
+  position: relative;
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top:0;
+}
+.c-rainbow__layer {
+  --text-color: var(--color-foreground);
+  counter-increment: rainbow;
+  font-size: 3rem;
+  color: var(--text-color);
+  text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black), 4px 4px 0 rgba(0, 0, 0, 0.2);
+  animation: rainbow 1.5s ease-in-out infinite;
+}
+.c-rainbow__layer:nth-child(1) {
+  animation-delay: calc( 1 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 1);
+  z-index: -10;
+}
+.c-rainbow__layer:nth-child(2) {
+  animation-delay: calc( 2 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 2);
+  z-index: -20;
+}
+.c-rainbow__layer:nth-child(3) {
+  animation-delay: calc( 3 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 3);
+  z-index: -30;
+}
+.c-rainbow__layer:nth-child(4) {
+  animation-delay: calc( 4 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 4);
+  z-index: -40;
+}
+.c-rainbow__layer:nth-child(5) {
+  animation-delay: calc( 5 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 5);
+  z-index: -50;
+}
+.c-rainbow__layer:nth-child(6) {
+  animation-delay: calc( 6 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 6);
+  z-index: -60;
+}
+.c-rainbow__layer:nth-child(7) {
+  animation-delay: calc( 7 / var(--delay) * 1s);
+  left: calc(var(--axis-x) * 7);
+  z-index: -70;
+}
+.c-rainbow__layer:not(:first-child) {
+  position: absolute;
+  top: 0;
+}
+.c-rainbow__layer--white {
+  --text-color: var(--color-white);
+}
+.c-rainbow__layer--orange {
+  --text-color: var(--color-orange);
+}
+.c-rainbow__layer--red {
+  --text-color: var(--color-red);
+}
+.c-rainbow__layer--violet {
+  --text-color: var(--color-violet);
+}
+.c-rainbow__layer--blue {
+  --text-color: var(--color-blue);
+}
+.c-rainbow__layer--green {
+  --text-color: var(--color-green);
+}
+.c-rainbow__layer--yellow {
+  --text-color: var(--color-yellow);
+}
+
+@keyframes rainbow {
+  0%, 100% {
+    transform: translatey(var(--axis-y));
+  }
+  50% {
+    transform: translatey(calc(var(--axis-y) * -1));
+  }
 }
