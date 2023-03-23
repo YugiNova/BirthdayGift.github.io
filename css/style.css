@@ -247,7 +247,13 @@ body {
   align-items: center;
   overflow: hidden;
   z-index: 5;
-  display: none;
+  /* display: none; */
+  height: 120px;
+}
+@keyframes hide-countdown {
+  100%{
+    height: 0;
+  }
 }
 .birthday-countdown .countdown-timer h1 {
   display: flex;
@@ -327,15 +333,25 @@ body {
 .discover-birthday {
   display: flex;
   width: 100%;
+  height: 0;
   justify-content: center;
   align-items: center;
   z-index: 10;
   flex-direction: column;
-  padding: 10px;
+  padding: 0;
+  overflow: hidden;
 }
+@keyframes show-discover {
+  100%{
+    height: 135px;
+    padding: 10px;
+  }
+}
+
 .discover-birthday h1 {
   font-size: 22px;
   position: relative;
+  overflow: hidden;
 }
 .discover-birthday h1::before {
   position: absolute;
@@ -378,6 +394,7 @@ body {
   padding: 5px;
   overflow: hidden;
   border-radius: 8px;
+  overflow: hidden;
 }
 .magic-card {
   background: #191c29;

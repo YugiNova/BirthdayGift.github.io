@@ -31,7 +31,7 @@ generateCalendar = (month, year) => {
     let calendarHeaderYear = document.querySelector('#year');
     let daysOfMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let currDate = new Date();
-    let birthday = new Date("2022-03-28");
+    let birthday = new Date("2022-03-23");
 
     monthPicker.innerHTML = monthFullNames[month];
     calendarHeaderYear.innerHTML = year;

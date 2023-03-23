@@ -6,7 +6,94 @@
 //It also supports NodeList
 // VanillaTilt.init(document.querySelectorAll(".calendar-card"));
 
+let lastWishesHtml = `<div class="card-slider">
+    <div class="swiper-wrapper">
 
+      <!-- Happy -->
+      <div class="swiper-slide">
+        <div class="gift-card fire">
+          <div class="cover">
+            <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>First <br> wishes</h2>
+            <h1>Happy</h1>
+          </div>
+          <div class="wishes">
+            <p>There is no value in life except what you choose to place upon it and no happiness in any place except what you bring to it yourself. Have a wonderful time and a very happy birthday!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luck -->
+      <div class="swiper-slide">
+        <div class="gift-card water">
+          <div class="cover">
+            <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Second <br> wishes</h2>
+            <h1>Luck</h1>
+          </div>
+          <div class="wishes">
+            <p>An old saying said that: “Every day is a gift. It can be really amazing, but it can be disappointing also. However, I want to wish good luck in everything that happens in your life. May yours bring you only pleasant and helpful gifts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div class="swiper-slide">
+        <div class="gift-card wood">
+          <div class="cover">
+            <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Third <br> wishes</h2>
+            <h1>Success</h1>
+          </div>
+          <div class="wishes">
+            <p>All successful people men and women are big dreamers. They imagine what their future could be, ideal in every respect, and then they work every day toward their distant vision, that goal or purpose. For great success you must have big dreams.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health -->
+      <div class="swiper-slide">
+        <div class="gift-card earth">
+          <div class="cover">
+            <h2 onclick="wishesAnimation(this)"><span style="font-size: 15px;">>> Tap me <<</span><br>Fourth <br> wishes</h2>
+            <h1>Health</h1>
+          </div>
+          <div class="wishes">
+            <p>There’s nothing more important than our good health – that’s our principal capital asset. I wishes you have lots of health and success in your life.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Write for yourselft next year -->
+      <div class="swiper-slide">
+        <div class="gift-card metal">
+          <div class="cover">
+            <h2 onclick="lastWishes(this)" style="font-size: 14px;">
+              I wishes you will keep both <span style="color:#cc8e35">healthy</span> and <span  style="color:#00b894">successful</span>, always get lots of <span  style="color:#3c67e3">luck</span>. And you will become the <span  style="color:#d63031">happiest</span> person in the world 
+              And there is another wish, the last wishes...<br>
+              >> Tap here <<
+            </h2>
+            <h2 class="second-cover" onclick="secondCover(this)">
+              The last wishes is your wishes to yourself on your next year's birthday, to you in the future,... <br>
+              It can be goals, promises, wishes for yourself next year and you can only revisit this day next year <br>
+              >> now tap if you ready to make this last wish <<
+            </h2>
+          </div>
+          <div class="last-wishes">
+            <textarea id="your-last-wishes" cols="35" placeholder="Type your wishes here, only English...."></textarea>
+            <!-- <input type="text" id="your-last-wishes"> -->
+            <button class="btn-send-wishes">
+              <span class="default">Send</span>
+              <span class="success">Sent</span>
+              <div class="left"></div>
+              <div class="right"></div>
+            </button>
+          </div>
+          <h2 class="last-cover">
+            Your wishes have been sent to the future <br>
+            You can only watch it again on your next year's birthday
+          </h2>
+        </div>
+      </div>
+    </div>
+    </div>`;
 
 const myAtropos = Atropos({
     el: '.my-atropos',
@@ -56,6 +143,19 @@ function count_down() {
       });
     }
 
+    //Handle Countdown - Discover
+    const countdownToogle = () => {
+      let countdown = document.querySelector(".countdown-timer");
+      countdown.style.animation = "2s hide-countdown forwards"
+      let discover = document.querySelector(".discover-birthday");
+      discover.style.animation = "2s show-discover forwards"
+    }
+    setTimeout(()=>{
+      countdownToogle();
+    },1000)
+
+    
+
     //click to discover
     const clickToDiscover = () => {
       let circleTop = document.querySelector(".circle-top");
@@ -72,6 +172,8 @@ function count_down() {
 
       let calendarCard = document.querySelector(".container");
       calendarCard.style.animation = "disapear-calendar 3s forwards 1s";
+
+      //document.body.innerHTML.replace(`<div class="card-slider"></div>`,lastWishesHtml);
 
       let swipperCard = document.querySelector(".card-slider");
       swipperCard.style.animation = "show-swipper 1s forwards 4s";
@@ -226,18 +328,28 @@ function count_down() {
       grabCursor: true,
     });
 
+
+    //Last wishes handle
+    
+
     let wishesData = [];
     axios.get("https://641ad7369b82ded29d4314bd.mockapi.io/wishes")
       .then((res)=>{
         console.log(res.data);
-        wishesData.push(res.data);
+        wishesData = res.data;
+        console.log(wishesData);
+        if(wishesData.length !== 0){
+          let lastWishes = document.querySelector(".metal .last-wishes");
+          lastWishes.remove();
+          let metalCover = document.querySelector(".metal .cover");
+          metalCover.remove();
+          let lastCover = document.querySelector(".last-cover");
+          lastCover.style.animation = "last-cover 2s forwards";
+        }
+        else{
+          console.log(false);
+        }
       })
-
-      const dateArr = wishesData.forEach(item => {
-        console.log(item.id); 
-      })
-      
-    
 
     document.querySelectorAll('.btn-send-wishes').forEach(button => {
 
@@ -246,8 +358,10 @@ function count_down() {
       button.addEventListener('click', e => {
           
           let wishesContent = document.querySelector("#your-last-wishes").value;
-          let wishesDate = new Date();
-          axios.post("https://641ad7369b82ded29d4314bd.mockapi.io/wishes",{date: wishesDate ,wishes : wishesContent}).then((res)=>{console.log(res.data);})
+          let d = new Date
+          let wishesTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+          let wishesDate = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
+          axios.post("https://641ad7369b82ded29d4314bd.mockapi.io/wishes",{date: wishesDate, time: wishesTime,wishes : wishesContent}).then((res)=>{console.log(res.data);})
 
           
           if(!button.classList.contains('active')) {
