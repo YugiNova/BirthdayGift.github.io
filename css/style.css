@@ -523,7 +523,7 @@ body {
   }
   100% {
     opacity: 1;
-    bottom: 25vh;
+    bottom: 20vh;
   }
 }
 .swiper-slide {
@@ -881,7 +881,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
 /* Happy Birthday text */
 .happy-birthday{
   position: absolute;
-  top: 10vh;
+  top: 5vh;
   opacity: 0;
   /* animation: show-happy-text 5s forwards 2s; */
   z-index: 1;
