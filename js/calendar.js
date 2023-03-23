@@ -31,7 +31,7 @@ generateCalendar = (month, year) => {
     let calendarHeaderYear = document.querySelector('#year');
     let daysOfMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let currDate = new Date();
-    let birthday = new Date("2022-03-23");
+    let birthday = new Date("2022-03-28");
 
     monthPicker.innerHTML = monthFullNames[month];
     calendarHeaderYear.innerHTML = year;
@@ -53,6 +53,9 @@ generateCalendar = (month, year) => {
             if (i - firstDay.getDay() + 1 === birthday.getDate() && month === currDate.getMonth()) {
                 day.classList.add('birthDay');
                 day.setAttribute("data-atropos-offset","45")
+                if(year === 2023){
+                    day.setAttribute("onClick","showGift()")
+                }
             }
         }
         calendarDay.appendChild(day)
