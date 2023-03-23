@@ -17,6 +17,10 @@
   font-family: giftfont3;
   src: url(../font/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
 }
+@font-face {
+  font-family: authorfont;
+  src: url(../font/rustycolapen/RustyColaPen-Regular.otf)
+}
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +34,7 @@ body {
   overflow: hidden;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;
   background-color: black;
   position: relative;
 }
@@ -843,4 +847,22 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
     opacity: 1;
     z-index: 2;
   }
+}
+.author{
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2vh;
+  text-align: center;
+  background: #5433FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right bottom, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right bottom, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: 5;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-family: "authorfont",cursive;
+  font-weight: bold;
+  font-size: 22px;
 }

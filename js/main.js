@@ -102,7 +102,7 @@ const myAtropos = Atropos({
 });
 
 //count_down function
-var to_count = "28 March," + Math.floor(new Date().getFullYear());
+var to_count = "23 March," + Math.floor(new Date().getFullYear());
 function count_down() {
   
   var countDown = new Date(to_count).getTime();
@@ -171,17 +171,6 @@ const showGift = () => {
 // setTimeout(()=>{
 //   countdownToogle();
 // },1000)
-let birthday = new Date("2022-03-28");
-let curDate = new Date();
-const birthdayHandle = (birthDay, currDate) => {
-  if (
-    birthDay.getDate() === currDate.getDate() &&
-    birthDay.getMonth() === currDate.getMonth()
-  ) {
-    countdownToogle();
-  }
-};
-birthdayHandle(birthday, curDate);
 
 //click to discover gift 2023
 const clickToDiscover = () => {
@@ -200,6 +189,7 @@ const clickToDiscover = () => {
   let calendarCard = document.querySelector(".container");
   calendarCard.style.animation = "disapear-calendar 3s forwards 1s";
 
+  
   //document.body.innerHTML.replace(`<div class="card-slider"></div>`,lastWishesHtml);
 
   let swipperCard = document.querySelector(".card-slider");
@@ -209,6 +199,7 @@ const clickToDiscover = () => {
     circleTop.remove();
     circleBottom.remove();
     calendarCard.remove();
+    // document.querySelector(".author").remove();
   }, 4000);
 };
 
@@ -388,7 +379,7 @@ document.querySelectorAll(".btn-send-wishes").forEach((button) => {
         wishes: wishesContent,
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
       });
 
     if (!button.classList.contains("active")) {

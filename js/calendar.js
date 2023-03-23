@@ -25,13 +25,19 @@ monthPicker.onclick = () => {
 
 //Generate Calendar
 generateCalendar = (month, year) => {
+
     let calendarDay = document.querySelector('.calendar-day');
     calendarDay.innerHTML = '';
 
     let calendarHeaderYear = document.querySelector('#year');
     let daysOfMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let currDate = new Date();
-    let birthday = new Date("2022-03-28");
+    let birthday = new Date("2023-03-28");
+
+    if(currDate >= birthday){
+        console.log(true);
+    }
+    else console.log(false);           
 
     monthPicker.innerHTML = monthFullNames[month];
     calendarHeaderYear.innerHTML = year;
@@ -53,7 +59,7 @@ generateCalendar = (month, year) => {
             if (i - firstDay.getDay() + 1 === birthday.getDate() && month === currDate.getMonth()) {
                 day.classList.add('birthDay');
                 day.setAttribute("data-atropos-offset","45")
-                if(year === 2023){
+                if(currDate >= birthday){
                     day.setAttribute("onClick","showGift()")
                 }
             }
