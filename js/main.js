@@ -18,6 +18,24 @@ let birthdayTextHtml = `<div class="happy-birthday">
 </ul>
 </div>`;
 
+
+const mediaShowGift = (screen) => {
+  let cardSlider = document.querySelector(".card-slider");
+  let card3dSlider = document.querySelector("#drag-container");
+  if(screen.matches){//Mobile
+    cardSlider.style.display = "block";
+    card3dSlider.style.display = "none";
+  }
+  else{//Laptop
+    cardSlider.style.display = "none";
+    card3dSlider.style.display = "flex";
+  }
+}
+
+let screen = window.matchMedia("(max-width: 1300px)")
+mediaShowGift(screen);
+screen.addListener(mediaShowGift)
+
 const myAtropos = Atropos({
   el: ".my-atropos",
   // rest of parameters
@@ -122,7 +140,7 @@ const clickToDiscover = () => {
   let calendarCard = document.querySelector(".container");
   calendarCard.style.animation = "disapear-calendar 3s forwards 1s";
 
-  let swipperCard = document.querySelector(".card-slider");
+  let swipperCard = document.querySelector(".gift-slider-wrapper");
   swipperCard.style.animation = "show-swipper 1s forwards 4s";
 
   let happyText = document.querySelector(".happy-birthday");

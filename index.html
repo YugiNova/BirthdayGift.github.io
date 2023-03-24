@@ -178,135 +178,258 @@
 
     <div id="wrapper-particles"></div>
 
-    <div class="card-slider">
-      <div class="swiper-wrapper">
-        <!-- Happy -->
-        <div class="swiper-slide">
-          <div class="gift-card fire">
-            <div class="cover">
-              <h2 onclick="wishesAnimation(this)">
-                <span style="font-size: 15px">>> Tap me <<</span><br />First
-                <br />
-                wishes
-              </h2>
-              <h1>Happy</h1>
+    <div class="gift-slider-wrapper">
+      <div class="card-slider"> 
+        <div class="swiper-wrapper">
+          <!-- Happy -->
+          <div class="swiper-slide">
+            <div class="gift-card fire">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />First
+                  <br />
+                  wishes
+                </h2>
+                <h1>Happy</h1>
+              </div>
+              <div class="wishes">
+                <p>
+                  There is no value in life except what you choose to place upon
+                  it and no happiness in any place except what you bring to it
+                  yourself. Have a wonderful time and a very happy birthday!
+                </p>
+              </div>
             </div>
-            <div class="wishes">
-              <p>
-                There is no value in life except what you choose to place upon
-                it and no happiness in any place except what you bring to it
-                yourself. Have a wonderful time and a very happy birthday!
-              </p>
+          </div>
+  
+          <!-- Luck -->
+          <div class="swiper-slide">
+            <div class="gift-card water">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Second
+                  <br />
+                  wishes
+                </h2>
+                <h1>Luck</h1>
+              </div>
+              <div class="wishes">
+                <p>
+                  An old saying said that: “Every day is a gift. It can be really
+                  amazing, but it can be disappointing also. However, I want to
+                  wish good luck in everything that happens in your life. May
+                  yours bring you only pleasant and helpful gifts.
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Success -->
+          <div class="swiper-slide">
+            <div class="gift-card wood">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Third
+                  <br />
+                  wishes
+                </h2>
+                <h1>Success</h1>
+              </div>
+              <div class="wishes">
+                <p>
+                  All successful people men and women are big dreamers. They
+                  imagine what their future could be, ideal in every respect, and
+                  then they work every day toward their distant vision, that goal
+                  or purpose. For great success you must have big dreams.
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Health -->
+          <div class="swiper-slide">
+            <div class="gift-card earth">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Fourth
+                  <br />
+                  wishes
+                </h2>
+                <h1>Health</h1>
+              </div>
+              <div class="wishes">
+                <p>
+                  There’s nothing more important than our good health – that’s our
+                  principal capital asset. I wishes you have lots of health and
+                  success in your life.
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Write for yourselft next year -->
+          <div class="swiper-slide">
+            <div class="gift-card metal">
+              <div class="cover">
+                <h2 onclick="lastWishes(this)" style="font-size: 14px">
+                  I wishes you will keep both
+                  <span style="color: #cc8e35">healthy</span> and
+                  <span style="color: #00b894">successful</span>, always get lots
+                  of <span style="color: #3c67e3">luck</span>. And you will become
+                  the <span style="color: #d63031">happiest</span> person in the
+                  world And there is another wish, the last wishes...<br />
+                  >> Tap here <<
+                </h2>
+                <h2 class="second-cover" onclick="secondCover(this)">
+                  The last wishes is your wishes to yourself on your next year's
+                  birthday, to you in the future,... <br />
+                  It can be goals, promises, wishes for yourself next year and you
+                  can only revisit this day next year <br />
+                  >> now tap if you ready to make this last wish <<
+                </h2>
+              </div>
+              <div class="last-wishes">
+                <textarea
+                  id="your-last-wishes"
+                  cols="35"
+                  placeholder="Type your wishes here, only English...."
+                ></textarea>
+                <!-- <input type="text" id="your-last-wishes"> -->
+                <button class="btn-send-wishes">
+                  <span class="default">Send</span>
+                  <span class="success">Sent</span>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </button>
+              </div>
+              <h2 class="last-cover">
+                Your wishes have been sent to the future <br />
+                You can only watch it again on your next year's birthday
+              </h2>
             </div>
           </div>
         </div>
-
-        <!-- Luck -->
-        <div class="swiper-slide">
-          <div class="gift-card water">
-            <div class="cover">
-              <h2 onclick="wishesAnimation(this)">
-                <span style="font-size: 15px">>> Tap me <<</span><br />Second
-                <br />
-                wishes
+      </div>
+      <div id="drag-container">
+        <div id="spin-container">
+          <!-- Add your images (or video) here -->
+          <div class="spin-card">
+            <div class="gift-card metal">
+              <div class="cover">
+                <h2 onclick="lastWishes(this)" style="font-size: 14px">
+                  I wishes you will keep both
+                  <span style="color: #cc8e35">healthy</span> and
+                  <span style="color: #00b894">successful</span>, always get lots
+                  of <span style="color: #3c67e3">luck</span>. And you will become
+                  the <span style="color: #d63031">happiest</span> person in the
+                  world And there is another wish, the last wishes...<br />
+                  >> Tap here <<
+                </h2>
+                <h2 class="second-cover" onclick="secondCover(this)">
+                  The last wishes is your wishes to yourself on your next year's
+                  birthday, to you in the future,... <br />
+                  It can be goals, promises, wishes for yourself next year and you
+                  can only revisit this day next year <br />
+                  >> now tap if you ready to make this last wish <<
+                </h2>
+              </div>
+              <div class="last-wishes">
+                <textarea
+                  id="your-last-wishes"
+                  cols="35"
+                  placeholder="Type your wishes here, only English...."
+                ></textarea>
+                <!-- <input type="text" id="your-last-wishes"> -->
+                <button class="btn-send-wishes">
+                  <span class="default">Send</span>
+                  <span class="success">Sent</span>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </button>
+              </div>
+              <h2 class="last-cover">
+                Your wishes have been sent to the future <br />
+                You can only watch it again on your next year's birthday
               </h2>
-              <h1>Luck</h1>
-            </div>
-            <div class="wishes">
-              <p>
-                An old saying said that: “Every day is a gift. It can be really
-                amazing, but it can be disappointing also. However, I want to
-                wish good luck in everything that happens in your life. May
-                yours bring you only pleasant and helpful gifts.
-              </p>
             </div>
           </div>
-        </div>
-
-        <!-- Success -->
-        <div class="swiper-slide">
-          <div class="gift-card wood">
-            <div class="cover">
-              <h2 onclick="wishesAnimation(this)">
-                <span style="font-size: 15px">>> Tap me <<</span><br />Third
-                <br />
-                wishes
-              </h2>
-              <h1>Success</h1>
-            </div>
-            <div class="wishes">
-              <p>
-                All successful people men and women are big dreamers. They
-                imagine what their future could be, ideal in every respect, and
-                then they work every day toward their distant vision, that goal
-                or purpose. For great success you must have big dreams.
-              </p>
+          <div class="spin-card">
+            <div class="gift-card earth">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Fourth
+                  <br />
+                  wishes
+                </h2>
+                <h1>Health</h1>
+              </div>
+              <div class="wishes" >
+                  There’s nothing more important than our good health – that’s our
+                  principal capital asset. I wishes you have lots of health and
+                  success in your life.
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Health -->
-        <div class="swiper-slide">
-          <div class="gift-card earth">
-            <div class="cover">
-              <h2 onclick="wishesAnimation(this)">
-                <span style="font-size: 15px">>> Tap me <<</span><br />Fourth
-                <br />
-                wishes
-              </h2>
-              <h1>Health</h1>
-            </div>
-            <div class="wishes">
-              <p>
-                There’s nothing more important than our good health – that’s our
-                principal capital asset. I wishes you have lots of health and
-                success in your life.
-              </p>
+          <div class="spin-card">
+            <div class="gift-card wood">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Third
+                  <br />
+                  wishes
+                </h2>
+                <h1>Success</h1>
+              </div>
+              <div class="wishes">
+                  All successful people men and women are big dreamers. They
+                  imagine what their future could be, ideal in every respect, and
+                  then they work every day toward their distant vision, that goal
+                  or purpose. For great success you must have big dreams.
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Write for yourselft next year -->
-        <div class="swiper-slide">
-          <div class="gift-card metal">
-            <div class="cover">
-              <h2 onclick="lastWishes(this)" style="font-size: 14px">
-                I wishes you will keep both
-                <span style="color: #cc8e35">healthy</span> and
-                <span style="color: #00b894">successful</span>, always get lots
-                of <span style="color: #3c67e3">luck</span>. And you will become
-                the <span style="color: #d63031">happiest</span> person in the
-                world And there is another wish, the last wishes...<br />
-                >> Tap here <<
-              </h2>
-              <h2 class="second-cover" onclick="secondCover(this)">
-                The last wishes is your wishes to yourself on your next year's
-                birthday, to you in the future,... <br />
-                It can be goals, promises, wishes for yourself next year and you
-                can only revisit this day next year <br />
-                >> now tap if you ready to make this last wish <<
-              </h2>
+          <div class="spin-card">
+            <div class="gift-card water">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />Second
+                  <br />
+                  wishes
+                </h2>
+                <h1>Luck</h1>
+              </div>
+              <div class="wishes">
+                  An old saying said that: “Every day is a gift. It can be really
+                  amazing, but it can be disappointing also. However, I want to
+                  wish good luck in everything that happens in your life. May
+                  yours bring you only pleasant and helpful gifts.
+              </div>
             </div>
-            <div class="last-wishes">
-              <textarea
-                id="your-last-wishes"
-                cols="35"
-                placeholder="Type your wishes here, only English...."
-              ></textarea>
-              <!-- <input type="text" id="your-last-wishes"> -->
-              <button class="btn-send-wishes">
-                <span class="default">Send</span>
-                <span class="success">Sent</span>
-                <div class="left"></div>
-                <div class="right"></div>
-              </button>
-            </div>
-            <h2 class="last-cover">
-              Your wishes have been sent to the future <br />
-              You can only watch it again on your next year's birthday
-            </h2>
           </div>
+          <div class="spin-card">
+            <div class="gift-card fire">
+              <div class="cover">
+                <h2 onclick="wishesAnimation(this)">
+                  <span style="font-size: 15px">>> Tap me <<</span><br />First
+                  <br />
+                  wishes
+                </h2>
+                <h1>Happy</h1>
+              </div>
+              <div class="wishes">
+                  There is no value in life except what you choose to place upon
+                  it and no happiness in any place except what you bring to it
+                  yourself. Have a wonderful time and a very happy birthday!
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          <!-- Text at center of ground -->
+          <p></p> 
         </div>
+        <div id="ground"></div>
       </div>
     </div>
 
@@ -337,6 +460,9 @@
 
     <!-- Swipper Card -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- 3D Slider Card -->
+    <script type="text/javascript" src="js/3d_slider.js"></script>
 
     <!-- GSAP Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>

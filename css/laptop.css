@@ -52,4 +52,8 @@
     .happy-birthday{
         top: 5vh;
     }
+    .gift-card .wishes{
+        font-family: 'giftfont2', cursive;
+        font-size: 18px;
+    }
 }
