@@ -32,7 +32,7 @@ generateCalendar = (month, year) => {
     let calendarHeaderYear = document.querySelector('#year');
     let daysOfMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let currDate = new Date();
-    let birthday = new Date("2023-03-20");
+    let birthday = new Date("2023-03-28");
 
     if(currDate >= birthday){
         console.log(true);
