@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Syncopate");
 @font-face {
   font-family: handwritting;
   src: url(../font/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
@@ -369,7 +370,7 @@ body {
 }
 
 .discover-birthday h1 {
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
   color: hsl(0, 0%, 28%);
   font-weight: bold;
@@ -638,6 +639,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
   border: 3px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right bottom, #6a5af9, #f62682);
+  z-index: 15;
 }
 
 .gift-card .last-wishes #your-last-wishes:focus{
@@ -1105,5 +1107,107 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7EA60", en
   } to{
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
+  }
+}
+
+/* Happy birthday laptop */
+:root {
+  /* --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352; */
+  
+  --color-primary: #D49C3D;
+  --color-secondary: #CF52EB;
+  --color-tertiary: #44A3F7;
+  --color-quaternary: #5ACB3C;
+  --color-quinary: #DEBF40;
+ 
+}
+.happy-birthday .content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.happy-birthday .content .text_shadows {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  /* font-family: "giftfont2", cursive; */
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  /* color: transparent;
+  background-color: white;
+  background-clip: text; */
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.4rem;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
   }
 }

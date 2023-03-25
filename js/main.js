@@ -1,34 +1,20 @@
-// VanillaTilt.init(document.querySelector(".your-element"), {
-//     max: 25,
-//     speed: 400
-// });
-
-//It also supports NodeList
-// VanillaTilt.init(document.querySelectorAll(".calendar-card"));
-
-let birthdayTextHtml = `<div class="happy-birthday">
-<ul class="c-rainbow">
-  <li class="c-rainbow__layer c-rainbow__layer--white">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--orange">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--red">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--violet">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--blue">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--green">HappyBirthday</li>
-  <li class="c-rainbow__layer c-rainbow__layer--yellow">HappyBirthday</li>
-</ul>
-</div>`;
-
-
+//Happy birthday laptop
 const mediaShowGift = (screen) => {
   let cardSlider = document.querySelector(".card-slider");
   let card3dSlider = document.querySelector("#drag-container");
+  let happyMobile = document.querySelector(".c-rainbow");
+  let happyLaptop = document.querySelector(".happy-birthday .content")
   if(screen.matches){//Mobile
     cardSlider.style.display = "block";
-    card3dSlider.style.display = "none";
+    card3dSlider.remove();
+    happyMobile.style.display = "block";
+    happyLaptop.style.display = "none";
   }
   else{//Laptop
-    cardSlider.style.display = "none";
+    cardSlider.remove();
     card3dSlider.style.display = "flex";
+    happyMobile.style.display = "none";
+    happyLaptop.style.display = "block";
   }
 }
 
@@ -122,6 +108,7 @@ const showGift = () => {
 // },1000)
 
 //click to discover gift 2023
+
 const clickToDiscover = () => {
   //document.body.innerHTML = document.body.innerHTML.replace(`<div class="happy-text"></div>`,birthdayTextHtml);
 
@@ -145,6 +132,8 @@ const clickToDiscover = () => {
 
   let happyText = document.querySelector(".happy-birthday");
   happyText.style.animation = "show-happy-text 8s forwards";
+
+  
 
   setTimeout(() => {
     circleTop.remove();
@@ -297,6 +286,7 @@ var swiper = new Swiper(".card-slider", {
 
 //Last wishes handle
 
+
 let wishesData = [];
 axios.get("https://641ad7369b82ded29d4314bd.mockapi.io/wishes").then((res) => {
   console.log(res.data);
@@ -309,8 +299,14 @@ axios.get("https://641ad7369b82ded29d4314bd.mockapi.io/wishes").then((res) => {
     metalCover.remove();
     let lastCover = document.querySelector(".last-cover");
     lastCover.style.animation = "last-cover 2s forwards";
+    lastWishesSpinCard();
   } else {
-    console.log(false);
+    let metalSecondCover = document.querySelector("#drag-container .metal .cover .second-cover");
+    metalSecondCover.remove();
+    let lastWishes = document.querySelector("#drag-container .metal .last-wishes");
+    lastWishes.remove();
+    let lastCover = document.querySelector("#drag-container .last-cover");
+    lastCover.remove();
   }
 });
 
@@ -457,3 +453,17 @@ document.querySelectorAll(".btn-send-wishes").forEach((button) => {
     }, 1500);
   });
 });
+
+
+//Last wishes in 3d spin card
+const lastWishesSpinCard = () => {
+  let lastWishes = document.querySelector("#drag-container .metal .last-wishes");
+  lastWishes.remove();
+  let metalCover = document.querySelector("#drag-container .metal .cover");
+  metalCover.remove();
+  let lastCover = document.querySelector("#drag-container .last-cover");
+  lastCover.style.animation = "last-cover 2s forwards";
+}
+
+
+

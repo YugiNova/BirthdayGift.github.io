@@ -89,7 +89,7 @@
                   To day is Your Birthday
                 </h1>
                 <div class="magic-card-wrapper">
-                  <button class="magic-card" onclick="clickToDiscover()">
+                  <button class="magic-card" id="btn-discover" onclick="clickToDiscover()">
                     Tap me <br />
                     To discover your day
                   </button>
@@ -293,6 +293,7 @@
                   id="your-last-wishes"
                   cols="35"
                   placeholder="Type your wishes here, only English...."
+                  contenteditable="true"
                 ></textarea>
                 <!-- <input type="text" id="your-last-wishes"> -->
                 <button class="btn-send-wishes">
@@ -322,8 +323,7 @@
                   <span style="color: #00b894">successful</span>, always get lots
                   of <span style="color: #3c67e3">luck</span>. And you will become
                   the <span style="color: #d63031">happiest</span> person in the
-                  world And there is another wish, the last wishes...<br />
-                  >> Tap here <<
+                  world.
                 </h2>
                 <h2 class="second-cover" onclick="secondCover(this)">
                   The last wishes is your wishes to yourself on your next year's
@@ -347,10 +347,10 @@
                   <div class="right"></div>
                 </button>
               </div>
-              <h2 class="last-cover">
+              <div class="last-cover">
                 Your wishes have been sent to the future <br />
                 You can only watch it again on your next year's birthday
-              </h2>
+              </div>
             </div>
           </div>
           <div class="spin-card">
@@ -434,6 +434,9 @@
     </div>
 
     <div class="happy-birthday">
+      <div class="content">
+        <h2 class="text_shadows">happy birthday</h2>
+      </div>
       <ul class="c-rainbow">
         <li class="c-rainbow__layer c-rainbow__layer--white">HappyBirthday</li>
         <li class="c-rainbow__layer c-rainbow__layer--orange">HappyBirthday</li>
@@ -449,6 +452,8 @@
       A Gift designed by Yugi Nova <br />
       for My Sister's Birthday
     </h2>
+    
+
     <!-- Particles JS -->
     <script type="text/javascript" src="js/particles.min.js"></script>
 
@@ -461,9 +466,6 @@
     <!-- Swipper Card -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- 3D Slider Card -->
-    <script type="text/javascript" src="js/3d_slider.js"></script>
-
     <!-- GSAP Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
@@ -472,5 +474,9 @@
 
     <!-- App JS file -->
     <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- 3D Slider Card -->
+    <script type="text/javascript" src="js/3d_slider.js"></script>
+    
   </body>
 </html>

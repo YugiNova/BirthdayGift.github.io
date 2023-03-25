@@ -25,7 +25,13 @@ var imgHeight = 424; // height of images (unit: px)
 
 // ===================== start =======================
 // animation start after 1000 miliseconds
- setTimeout(init,);
+const discoverClick = () => {
+  console.log("clicked");
+  setTimeout(init,5000);
+}
+document.querySelector("#btn-discover").addEventListener("click", discoverClick)
+
+
 
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
